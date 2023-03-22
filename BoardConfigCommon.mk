@@ -17,7 +17,11 @@
 # inherit from Oppo common
 -include device/oppo/common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/oppo/apq8064-common
+COMMON_PATH := device/oppo/apq8064-common
+
+BUILD_BROKEN_DUP_RULES := true
+
+LOCAL_PATH := $(call my-dir)
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -51,8 +55,8 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androidkernel-
 BOARD_NO_SECURE_DISCARD := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_find5
-TARGET_RECOVERY_DEVICE_MODULES := libinit_find5
+TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):libinit_find5
+TARGET_RECOVERY_DEVICE_MODULES ?= libinit_find5
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true

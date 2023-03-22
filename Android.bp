@@ -1,0 +1,6 @@
+soong_namespace {
+    imports: [
+        "device/oppo/common",
+        "kernel/oppo/n1",
+    ],
+}
