@@ -1,0 +1,19 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "liboppo_symbols",
+    srcs: [
+        "icu53.cpp",
+        "memory_base.cpp",
+        "vector.cpp",
+    ],
+    //include_dirs: ["external/icu/icu4c/source/common"],
+    shared_libs: [
+        "libbinder",
+    //    "libicuuc",
+    ],
+}
